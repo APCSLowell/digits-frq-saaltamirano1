@@ -7,13 +7,13 @@ public class Digits
 
 	public Digits(int num)
 	{ 
-		digitLIst = new ArrayList <Integer>;
+		digitList = new ArrayList <Integer>;
 		if(num == 0){
 			digitList.add(0);
 		}
 		int n = num;
 		else if(num > 0 ){
-			digitList.add(0,n%10);
+			digitList.add(0, n%10);
 			n = n%10;
 		}
 	    
@@ -21,12 +21,15 @@ public class Digits
 
 	public boolean isStrictlyIncreasing()
 	{ 
-		for(int i = 0; i < didgitList.size()-1; i++){
-			if(digitList.get(i+1) <= digitList.get(i)){
-				return false;
+		for(int i = 1; i < digitList.size(); i++){
+			if(digitList.get(i) > digitList.get(i-1)){
+				return true;
+		// for(int i = 0; i < didgitList.size()-1; i++){
+		// 	if(digitList.get(i+1) <= digitList.get(i)){
+		// 		return false;
 			}
 		}
-		return true;
+		return false;
 	}
 	
 	public String toString()
